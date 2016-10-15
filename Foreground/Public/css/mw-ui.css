@@ -2,9 +2,15 @@
     min-height: 200px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    max-width: 100%;
     background-size: auto;
+    max-width: 100%;
     min-width: 400px;
+}
+
+@media screen and (max-width: 990px) {
+    .background-pic {
+        background-size:auto 100%;
+    }
 }
 
 .align-center {
@@ -26,6 +32,7 @@
 
 .top-line-normal {
     border-top: solid 25px #25a69d;
+    min-width: 400px;
 }
 
 .bottom {
@@ -37,4 +44,14 @@
 
 .login-content {
 	padding:0 11%;
+}
+
+.logo-bottom {
+    padding: 0 0 7% 0;
+    margin: 0 auto;
+}
+
+/*调色盘*/
+.color-25a69d {
+    color: #25a69d;
 }
