@@ -1,0 +1,36 @@
+.background-pic {
+    min-height: 200px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    background-size: auto auto;
+    min-width: 400px;
+}
+
+.align-center {
+    margin: auto;
+}
+
+.background-login-pic {
+    background-image: url(../imgs/login/login_bg.jpg);
+}
+
+.logo {
+    padding: 10px;
+}
+
+.contain-padding {
+    padding-left: 11.27%;
+    padding-right: 11.27%;
+}
+
+.top-line-normal {
+    border-top: solid 25px #25a69d;
+}
+
+.bottom {
+    float: 
+}
+
+.clear {zoom:1; clear:both;} 
+.clear:after {content:''; display:block; clear:both; visibility:hidden; height:0;}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/flat-ui.css" rel="stylesheet">
+    <link href="css/mw-ui.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="">
+      <div class="row">
+        <div class="col-md-8 col-xs-12 background-pic background-login-pic clear"  id="left">
+           
+            
+         </div>
+        <div class="col-md-4 col-xs-12 top-line-normal" id="right">
+            <h2>登录，并与朋友们一起玩</h2>
+            <p class="clear"></p>
+            <div name="logo" class="logo bottom">
+                <center><img class="align-center" style="clear:both;" src="imgs/login/logo_text.png" width="33%"></center>
+            </div>
+            <p class="clear">a</p>
+          </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+      <script> 
+         window.onload=function(){
+            setInterval("setHeight()",200);
+         }
+         
+         function setHeight(){
+            if(document.body.clientWidth < 990){
+                document.getElementById("left").style.height = 200+"px";
+                document.getElementById("right").style.height = "auto";
+            }
+            else{ 
+                document.getElementById("left").style.height = document.documentElement.clientHeight + "px";
+            }
+         }           
+           </script>
+  </body>
+</html>
