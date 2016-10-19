@@ -30,13 +30,21 @@
 			<form style="padding-top:5%">
 	             <input name="username" type="text" value="" placeholder="用户名" class="form-control" ><br />
 	             <input name="password" type="password" value="" placeholder="密码" class="form-control"><br />
+				 <div class="row">
+				   <div class="col-md-6 col-xs-6"><input name="checkcode" type="text" placeholder="验证码" id="checkcode" class="form-control"></div>
+				   <div class="col-md-6 col-xs-6"><img src="../checkcode.pho" title="验证码" style="margin:auto; padding-bottom:20%;"></div>
+				 </div>
 	             <input name="rememberMe" type="checkbox" value="remember" class="custom-checkbox"/><span class="color-25a69d"> 记住我的登录状态</span>
 	         </form><br />
-	         <a href="" style="width:19.7%;" class="btn  btn-info">登录</a>
-	         <a href="" style="width:19.7%;" class="btn  btn-success">注册</a>
+			 <div class="row">
+			 	<div class="col-md-6 col-xs-6"><a href="" style="width:100%;" class="btn  btn-info">登录</a></div>
+				<div class="col-md-6 col-xs-6"><a href="" style="width:100%;" class="btn  btn-success">注册</a></div>
+			 </div>
+	         
+	         
 	      </div>
 		 
-	 <div style="padding-top:30%"></div>
+	 <div style="padding-top:20%"></div>
 	 <center>
          <div class="logo-bottom"><img src="imgs/login/logo_text.png" width="40%;"/></div>
      </center>
@@ -64,10 +72,10 @@
             }
          }           
     </script>
-    <script type="text/javascript" src="//cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+    <!--<script type="text/javascript" src="//cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
     <script type="text/javascript">
         $youziku.load("p,h1,h2,h3,h4,h5,h6", "3db134f1455d4f85bcb8ee4a89ea9417", "Source-Han-Light");
         $youziku.draw();
-    </script> 
+    </script> -->
   </body>
 </html>
