@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Bootstrap 101 Template</title>
+    <title>登录</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -25,21 +25,21 @@
         </div>
         <div class="col-md-4 col-xs-12 top-line-normal" id="right">
 		  <div class="login-content">
-            <h4>登录，并与朋友们一起玩</h4>
-			<h6 style="padding-top:5%">现在，我们需要登录您登录的您账号来保持在线</h6>
+            <p style="padding-top:20%; padding-bottom:7%; font-size:2.5rem; line-height:0.5rem;">登录，并与朋友们一起玩</p>
+			<p class="color-25a69d" style="padding-bottom:10.7%">现在，需要登录的您账号来保持在线</p>
 			<form style="padding-top:5%">
-	             <input type="text" value="" placeholder="姓名" class="form-control" ><br />
-	             <input type="text" value="" placeholder="密码" class="form-control"><br />
-	             <input type="checkbox" value="remenber" style=""/>记住我的登录状态
+	             <input name="username" type="text" value="" placeholder="用户名" class="form-control" ><br />
+	             <input name="password" type="password" value="" placeholder="密码" class="form-control"><br />
+	             <input name="rememberMe" type="checkbox" value="remember" class="custom-checkbox"/><span class="color-25a69d"> 记住我的登录状态</span>
 	         </form><br />
-	         <a href="" class="btn  btn-info">登录</a>&nbsp;&nbsp;&nbsp;&nbsp;
-	         <a href="" class="btn  btn-success">注册</a>
+	         <a href="" style="width:19.7%;" class="btn  btn-info">登录</a>
+	         <a href="" style="width:19.7%;" class="btn  btn-success">注册</a>
 	      </div>
 		 
 	 <div style="padding-top:30%"></div>
-	 <div style="text-align:center">
-	      <img src="imgs/login/logo_text.png" width="40%;"/>
-	 </div>
+	 <center>
+         <div class="logo-bottom"><img src="imgs/login/logo_text.png" width="40%;"/></div>
+     </center>
 	 </div>
 </div>
           </div>
@@ -49,7 +49,7 @@
     <script src="js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-      <script> 
+    <script> 
          window.onload=function(){
             setInterval("setHeight()",200);
          }
@@ -63,6 +63,11 @@
                 document.getElementById("left").style.height = document.documentElement.clientHeight + "px";
             }
          }           
-           </script>
+    </script>
+    <script type="text/javascript" src="//cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+    <script type="text/javascript">
+        $youziku.load("p,h1,h2,h3,h4,h5,h6", "3db134f1455d4f85bcb8ee4a89ea9417", "Source-Han-Light");
+        $youziku.draw();
+    </script> 
   </body>
 </html>
