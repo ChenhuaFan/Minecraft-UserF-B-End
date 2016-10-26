@@ -28,15 +28,25 @@
             <p style="padding-top:20%; padding-bottom:7%; font-size:2.5rem; line-height:0.5rem;">登录，并与朋友们一起玩</p>
 			<p class="color-25a69d" style="padding-bottom:10.7%">现在，需要登录的您账号来保持在线</p>
 			<form style="padding-top:5%">
-	             <input name="username" type="text" value="" placeholder="用户名" class="form-control" ><br />
-	             <input name="password" type="password" value="" placeholder="密码" class="form-control"><br />
+	             <input name="username" type="text" value="" id="username" placeholder="登录账户" class="form-control" onkeyup="name_check()"><br>
+                <input name="password" type="password" value="" id="password" placeholder="密码" class="form-control" onkeyup="passw_check()"><br>
+				 <div class="row">
+				   <div class="col-md-6 col-xs-6">
+                       <input name="checkcode" type="text" placeholder="验证码" id="checkcode" class="form-control" onkeyup="checkcode_check()"><br>
+                   </div>
+				   <div class="col-md-6 col-xs-6"><img src="../checkcode.pho" title="验证码" style="margin:auto; padding-bottom:20%;"></div>
+				 </div>
 	             <input name="rememberMe" type="checkbox" value="remember" class="custom-checkbox"/><span class="color-25a69d"> 记住我的登录状态</span>
 	         </form><br />
-	         <a href="" style="width:19.7%;" class="btn  btn-info">登录</a>
-	         <a href="" style="width:19.7%;" class="btn  btn-success">注册</a>
+			 <div class="row">
+			 	<div class="col-md-6 col-xs-6"><button style="width:100%;" type="submit" id="submit_btn" class="btn btn-success display">登录</button></div>
+				<div class="col-md-6 col-xs-6"><button style="width:100%;" type="submit" id="submit_btn" class="btn btn-info"><a href="register.html" style="color:#fff">注册</a></button></div>
+			 </div>
+	         
+	         
 	      </div>
 		 
-	 <div style="padding-top:30%"></div>
+	 <div style="padding-top:20%"></div>
 	 <center>
          <div class="logo-bottom"><img src="imgs/login/logo_text.png" width="40%;"/></div>
      </center>
@@ -49,25 +59,16 @@
     <script src="js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script> 
+    <script>
          window.onload=function(){
-            setInterval("setHeight()",200);
+            setInterval("setHeight();checkform();",100);
          }
-         
-         function setHeight(){
-            if(document.body.clientWidth < 990){
-                document.getElementById("left").style.height = 200+"px";
-                document.getElementById("right").style.height = "auto";
-            }
-            else{ 
-                document.getElementById("left").style.height = document.documentElement.clientHeight + "px";
-            }
-         }           
     </script>
+    <script src="js/common.js"></script>
     <script type="text/javascript" src="//cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
     <script type="text/javascript">
         $youziku.load("p,h1,h2,h3,h4,h5,h6", "3db134f1455d4f85bcb8ee4a89ea9417", "Source-Han-Light");
         $youziku.draw();
-    </script> 
+    </script>
   </body>
 </html>

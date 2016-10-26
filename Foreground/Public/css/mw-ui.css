@@ -1,16 +1,48 @@
 .background-pic {
-    min-height: 200px;
+    min-height: 160px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-size: auto;
+    /*background-size: 1920px 1080px;*/
     max-width: 100%;
-    min-width: 400px;
 }
 
-@media screen and (max-width: 990px) {
-    .background-pic {
-        background-size:auto 100%;
-    }
+@media screen and (min-width: 990px) { /*当屏幕尺寸大于990px时，应用下面的CSS样式*/
+    .background-pic {
+        background-size: auto 1080px;
+    }
+}
+
+@media screen and (max-width: 990px) { /*当屏幕尺寸小于990px时，应用下面的CSS样式*/
+    .background-pic {
+        background-size: 100% auto;
+    }
+}
+
+.has-error {
+    color: #e74c3c;
+    border-color: #e74c3c;
+    box-shadow: none;
+}
+
+.has-success {
+    color: #2ecc71;
+    border-color: #2ecc71;
+    box-shadow: none;
+}
+
+.suggest-form {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin: 10px 0;
+    padding-bottom: 20px;
+}
+
+.sp_hide {
+    display: none;
+}
+
+.sp_show {
+    display: block;
 }
 
 .align-center {
@@ -33,10 +65,12 @@
 .top-line-normal {
     border-top: solid 25px #25a69d;
     min-width: 400px;
+	height:auto;
+	
 }
 
 .bottom {
-    float: 
+
 }
 
 .clear {zoom:1; clear:both;} 
