@@ -64,7 +64,7 @@
 
 .top-line-normal {
     border-top: solid 25px #25a69d;
-    min-width: 400px;
+    /*min-width: 400px;*/
 	height:auto;
 	
 }
