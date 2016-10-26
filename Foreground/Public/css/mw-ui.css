@@ -2,15 +2,10 @@
     min-height: 160px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-<<<<<<< HEAD
     /*background-size: 1920px 1080px;*/
-=======
-    background-size: 100% auto;
->>>>>>> origin/master
     max-width: 100%;
 }
 
-<<<<<<< HEAD
 @media screen and (min-width: 990px) { /*当屏幕尺寸大于990px时，应用下面的CSS样式*/
     .background-pic {
         background-size: auto 1080px;
@@ -48,12 +43,6 @@
 
 .sp_show {
     display: block;
-=======
-@media screen and (max-width: 990px) {
-    .background-pic {
-        background-size:100%;
-    }
->>>>>>> origin/master
 }
 
 .align-center {
