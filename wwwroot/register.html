@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>注册</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/flat-ui.css" rel="stylesheet">
+    <link href="css/mw-ui.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <div class="row">
+        <div class="col-md-12 col-xs-12 background-pic background-login-pic clear">
+        </div>
+        <div class="col-md-12 col-xs-12 top-line-normal">
+            <div class="container">
+                  <div class="login-content">
+                    <p style="padding-top:50px; padding-bottom:30px; font-size:2.5rem; line-height:0.8rem;">注册</p>
+                    <p class="color-25a69d" style="padding-bottom:30px">即刻加入 MagicWorld 家庭</p>
+                    <form method="post" action="CheckFormResg.php" enctype="multipart/form-data">
+                        <!--<img src="imgs/register/handler.svg" width="40%" style="position: absolute; z-index:-1; right:-3%; max-width:400px;">-->
+                        <input name="username" type="text" value="" placeholder="用户名" id="username" class="form-control" onkeyup="name_check()">
+                        <p class="suggest-form" id="user_advice"><span class="glyphicon glyphicon-exclamation-sign"></span> 用户名只能为<strong>字母数字下划线</strong>组合</p>
+                        <input name="password" type="password" value="" placeholder="密码" id="password" class="form-control" onkeyup="passw_check()"><br>
+                        <input type="password" value="" placeholder="确认密码" id="conf_password" class="form-control" onkeyup="conf_passw_check()">
+                        <p class="suggest-form" id="pass_advice"><span class="glyphicon glyphicon-exclamation-sign"></span> 密码长度<strong>至少为6位</strong></p>
+                        <input name="emailAdd" type="text" value="" placeholder="电子邮件地址" id="email" class="form-control" onkeyup="email_check()"><br><br>
+                        
+                        <div class="row">
+                           <div class="col-md-6 col-xs-6">
+                               <input name="checkcode" type="text" placeholder="验证码" id="checkcode" class="form-control" onkeyup="checkcode_check()">
+                           </div>
+                           <div class="col-md-6 col-xs-6"><img src="../checkcode.pho" title="验证码" style="margin:auto; padding-bottom:20%;"></div>
+                         </div>
+                     <br>
+                      <p class="has-error sp_hide" style="padding-bottom:5%;font-size:1.5rem;" id="error-form"><span class="glyphicon glyphicon-remove"></span> 您遵守了那些特定的格式么？</p>
+                        <p class="color-25a69d sp_hide" style="padding-bottom:5%;font-size:1.5rem;" id="success-form"><span class="glyphicon glyphicon-ok"></span> 恭喜您，就差最后一步了！</p>
+                     <div class="row">
+                        <div class="col-md-12 col-xs-12"><button style="width:100%; padding: 20px 0" type="submit" id="submit_btn" class="btn btn-success display">注册</button></div>
+                     </div>
+                        </form>
+
+
+                 </div>
+
+                 <div style="padding-top:10%"></div>
+                 <center>
+                     <div class="logo-bottom"><img src="imgs/login/logo_text.png" style="max-width:300px;" width="40%;"/></div>
+                 </center>
+	        </div>
+        </div>
+          </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--<script>
+         window.onload=function(){
+            setInterval("setHeight();checkform();",100);
+         }
+    </script>-->
+    <script src="js/common.js"></script>
+    <script type="text/javascript" src="//cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+    <script type="text/javascript">
+        $youziku.load("p,h1,h2,h3,h4,h5,h6", "3db134f1455d4f85bcb8ee4a89ea9417", "Source-Han-Light");
+        $youziku.draw();
+    </script>
+    <script>
+         window.onload=function(){
+            setInterval("checkform_register();",100);
+         }
+    </script>
+  </body>
+</html>

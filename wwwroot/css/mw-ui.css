@@ -1,0 +1,91 @@
+.background-pic {
+    min-height: 160px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    /*background-size: 1920px 1080px;*/
+    max-width: 100%;
+}
+
+@media screen and (min-width: 990px) { /*当屏幕尺寸大于990px时，应用下面的CSS样式*/
+    .background-pic {
+        background-size: auto 1080px;
+    }
+}
+
+@media screen and (max-width: 990px) { /*当屏幕尺寸小于990px时，应用下面的CSS样式*/
+    .background-pic {
+        background-size: 100% auto;
+    }
+}
+
+.has-error {
+    color: #e74c3c;
+    border-color: #e74c3c;
+    box-shadow: none;
+}
+
+.has-success {
+    color: #2ecc71;
+    border-color: #2ecc71;
+    box-shadow: none;
+}
+
+.suggest-form {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin: 10px 0;
+    padding-bottom: 20px;
+}
+
+.sp_hide {
+    display: none;
+}
+
+.sp_show {
+    display: block;
+}
+
+.align-center {
+    margin: auto;
+}
+
+.background-login-pic {
+    background-image: url(../imgs/login/login_bg.jpg);
+}
+
+.logo {
+    padding: 10px;
+}
+
+.contain-padding {
+    padding-left: 11.27%;
+    padding-right: 11.27%;
+}
+
+.top-line-normal {
+    border-top: solid 25px #25a69d;
+    /*min-width: 400px;*/
+	height:auto;
+	
+}
+
+.bottom {
+
+}
+
+.clear {zoom:1; clear:both;} 
+.clear:after {content:''; display:block; clear:both; visibility:hidden; height:0;}
+
+.login-content {
+	padding:0 11%;
+}
+
+.logo-bottom {
+    padding: 0 0 7% 0;
+    margin: 0 auto;
+}
+
+/*调色盘*/
+.color-25a69d {
+    color: #25a69d;
+}
