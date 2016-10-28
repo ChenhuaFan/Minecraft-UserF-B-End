@@ -27,7 +27,7 @@
                   <div class="login-content">
                     <p style="padding-top:50px; padding-bottom:30px; font-size:2.5rem; line-height:0.8rem;">注册</p>
                     <p class="color-25a69d" style="padding-bottom:30px">即刻加入 MagicWorld 家庭</p>
-                    <form>
+                    <form method="post" action="CheckFormResg.php" enctype="multipart/form-data">
                         <!--<img src="imgs/register/handler.svg" width="40%" style="position: absolute; z-index:-1; right:-3%; max-width:400px;">-->
                         <input name="username" type="text" value="" placeholder="用户名" id="username" class="form-control" onkeyup="name_check()">
                         <p class="suggest-form" id="user_advice"><span class="glyphicon glyphicon-exclamation-sign"></span> 用户名只能为<strong>字母数字下划线</strong>组合</p>
@@ -42,12 +42,13 @@
                            </div>
                            <div class="col-md-6 col-xs-6"><img src="../checkcode.pho" title="验证码" style="margin:auto; padding-bottom:20%;"></div>
                          </div>
-                     </form><br>
+                     <br>
                       <p class="has-error sp_hide" style="padding-bottom:5%;font-size:1.5rem;" id="error-form"><span class="glyphicon glyphicon-remove"></span> 您遵守了那些特定的格式么？</p>
                         <p class="color-25a69d sp_hide" style="padding-bottom:5%;font-size:1.5rem;" id="success-form"><span class="glyphicon glyphicon-ok"></span> 恭喜您，就差最后一步了！</p>
                      <div class="row">
                         <div class="col-md-12 col-xs-12"><button style="width:100%; padding: 20px 0" type="submit" id="submit_btn" class="btn btn-success display">注册</button></div>
                      </div>
+                        </form>
 
 
                  </div>
