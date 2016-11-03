@@ -146,8 +146,52 @@ function setHeight(){
          }       
 
 //register 页面需要的代码
+var xmlHttp;
+//创建Ajax核心对象XMLHttpRequest
+function createXMLHttp(){
+    if(window.XMLHttpRequest){
+        xmlHttp = new XMLHttpRequest();
+    }else{
+        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+}
+
+function checkUsername(username){
+    createXMLHttp();
+
+//设置请求方式为GET，设置请求的URL，设置为异步提交
+    xmlHttp.open("GET","../mc/inlcudes/searchname.php?username="+username ,true);
+
+//将方法地址复制给onreadystatechange属性
+//类似于电话号码
+    xmlHttp.onreadystatechange = checkUsernameCallback();
+//将设置信息发送到Ajax引擎
+    xmlHttp.send(null);
+}
+
+function checkUsernameCallback(){
+//Ajax引擎状态为成功
+    if(xmlHttp.readyState == 4){
+//HTTP协议状态为成功
+        if(xmlHttp.status == 200){
+            var text = xmlHttp.responseText;
+            if(text == 1){
+                $["#username"].removeClass("has-error");
+                $["#username"].addClass("has-success");
+                $["#conflict_name"].removeClass("sp_show");
+                return true;
+            }else{
+                $["#username"].removeClass("has-success");
+                $["#username"].addClass("has-error");
+                $["#conflict_name"].addClass("sp_show");
+                return false;
+            }
+        }
+    }
+}
+
 function checkform_register(){
-    if(!name_check() || !passw_check() || !checkcode_check() || !email_check() || !conf_passw_check())
+    if(!name_check() || !passw_check() || !checkcode_check() || !email_check() || !conf_passw_check() || !checkUsername())
             {
                 $("#submit_btn").attr("disabled","disabled"); 
                 $("#submit_btn").addClass("btn-danger");
@@ -161,3 +205,5 @@ function checkform_register(){
                 $("#success-form").addClass("sp_show");
             }
 }
+
+

@@ -29,7 +29,8 @@
                     <p class="color-25a69d" style="padding-bottom:30px">即刻加入 MagicWorld 家庭</p>
                     <form method="post" action="CheckFormResg.php" enctype="multipart/form-data">
                         <!--<img src="imgs/register/handler.svg" width="40%" style="position: absolute; z-index:-1; right:-3%; max-width:400px;">-->
-                        <input name="username" type="text" value="" placeholder="用户名" id="username" class="form-control" onkeyup="name_check()">
+                        <input name="username" type="text" value="" placeholder="用户名" id="username" class="form-control" onkeyup="name_check()" onblur="checkUsername(this.value)">
+                        <p class="suggest-form sp_hide" id="conflict_name">用户名已经存在！</p>
                         <p class="suggest-form" id="user_advice"><span class="glyphicon glyphicon-exclamation-sign"></span> 用户名只能为<strong>字母数字下划线</strong>组合</p>
                         <input name="password" type="password" value="" placeholder="密码" id="password" class="form-control" onkeyup="passw_check()"><br>
                         <input type="password" value="" placeholder="确认密码" id="conf_password" class="form-control" onkeyup="conf_passw_check()">
@@ -40,7 +41,7 @@
                            <div class="col-md-6 col-xs-6">
                                <input name="checkcode" type="text" placeholder="验证码" id="checkcode" class="form-control" onkeyup="checkcode_check()">
                            </div>
-                           <div class="col-md-6 col-xs-6"><img src="../checkcode.pho" title="验证码" style="margin:auto; padding-bottom:20%;"></div>
+                           <div class="col-md-6 col-xs-6"><img src="../checkcode.php" title="验证码" style="margin:auto; padding-bottom:20%;"></div>
                          </div>
                      <br>
                       <p class="has-error sp_hide" style="padding-bottom:5%;font-size:1.5rem;" id="error-form"><span class="glyphicon glyphicon-remove"></span> 您遵守了那些特定的格式么？</p>

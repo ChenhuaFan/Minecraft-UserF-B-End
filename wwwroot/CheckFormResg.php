@@ -8,6 +8,5 @@
  */
 include ("inlcudes/CheckFormL.php");
 
-$checkformreg = new CheckFormR($_POST['username'],$_POST['password'],$_POST);
+$checkformreg = new CheckFormR($_POST['username'],$_POST['password']);
 $checkformreg->checkunity();
-?>

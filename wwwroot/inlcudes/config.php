@@ -8,13 +8,16 @@ define('DB_PASSWORD', 'd123456f');
 //数据库名
 define('DB_NAME', 'samchevia');
 //数据库各表名
-define('R_ROLE_PERMISSION', '');
-define('R_USER_ROLE', '');
-define('T_ACTIVITIES', '');
-define('', '');
-define('', '');
-define('', '');
-define('', '');
-define('', '');
-define('', '');
-?>
+define('DB_CHARSET','charset=utf8');
+//数据库编码格式
+define('R_ROLE_PERMISSION', 'rrolepermission');
+define('R_USER_ROLE', 'ruserreole');
+define('T_ACTIVITIES', 'tactivities');
+define('T_DICTIONARY', 'tdictionary');
+define('T_FILESURL', 'tfilesurl');
+define('T_INTRODUCTION', 'tintroduction');
+define('T_PERMISSION', 'tpermission');
+define('T_RESULTSTATISTIC', 'tresultstatistic');
+define('T_ROLE', 'trole');
+define('T_USER','tuser');
+define('T_USERINFO','tuserinfo');
