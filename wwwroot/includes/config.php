@@ -21,3 +21,6 @@ define('T_RESULTSTATISTIC', 'tresultstatistic');
 define('T_ROLE', 'trole');
 define('T_USER','tuser');
 define('T_USERINFO','tuserinfo');
+
+//启动session
+session_start();

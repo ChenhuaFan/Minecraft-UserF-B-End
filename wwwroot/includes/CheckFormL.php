@@ -74,6 +74,7 @@ class CheckFormL
         else{
             if($this->searchSql()){
                 echo "<script>alert('login success!')</script>";
+                //header("Location:http://www.hsxyhgh.com/inlcudes/register_login.php");
                 return true;    //TODO：cookies或者是session 持续登陆？
             }
             else {
