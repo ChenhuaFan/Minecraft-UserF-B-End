@@ -22,5 +22,5 @@ define('T_ROLE', 'trole');
 define('T_USER','tuser');
 define('T_USERINFO','tuserinfo');
 
-//启动session
+//启动session和符合的
 session_start();

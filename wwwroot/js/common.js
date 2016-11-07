@@ -51,18 +51,18 @@ function checkcode_check() {
     var Regx = /^\w+$/; //[A-Za-z0-9]*$
     var checkcode = $("#checkcode")
     if(form_number.length != 4) {
-        checkcode.removeClass("has-success");
+        checkcode.removeClass("has-warning");
         checkcode.addClass("has-error");
         return false;
     }
     else {
         if (Regx.test(form_number)) {
                 checkcode.removeClass("has-error");
-                checkcode.addClass("has-success");
+                checkcode.addClass("has-warning");
                 return true;
             }
             else {
-                checkcode.removeClass("has-success");
+                checkcode.removeClass("has-warning");
                 checkcode.addClass("has-error");
                 return false;
             }
@@ -146,52 +146,40 @@ function setHeight(){
          }       
 
 //register 页面需要的代码
-var xmlHttp;
-//创建Ajax核心对象XMLHttpRequest
-function createXMLHttp(){
-    if(window.XMLHttpRequest){
-        xmlHttp = new XMLHttpRequest();
-    }else{
-        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+function checkUserConflict() { //TODO: FIX THIS FUNCTION
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
     }
-}
-
-function checkUsername(username){
-    createXMLHttp();
-
-//设置请求方式为GET，设置请求的URL，设置为异步提交
-    xmlHttp.open("GET","../mc/inlcudes/searchname.php?username="+username ,true);
-
-//将方法地址复制给onreadystatechange属性
-//类似于电话号码
-    xmlHttp.onreadystatechange = checkUsernameCallback();
-//将设置信息发送到Ajax引擎
-    xmlHttp.send(null);
-}
-
-function checkUsernameCallback(){
-//Ajax引擎状态为成功
-    if(xmlHttp.readyState == 4){
-//HTTP协议状态为成功
-        if(xmlHttp.status == 200){
-            var text = xmlHttp.responseText;
-            if(text == 1){
-                $["#username"].removeClass("has-error");
-                $["#username"].addClass("has-success");
-                $["#conflict_name"].removeClass("sp_show");
-                return true;
-            }else{
-                $["#username"].removeClass("has-success");
-                $["#username"].addClass("has-error");
-                $["#conflict_name"].addClass("sp_show");
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    var username = $("#conflict_name").val();
+    var p = $("#conflict_name");
+    xmlhttp.open("POST","../includes/searchname.php");
+    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp.send(username);
+    xmlhttp.onreadystatechange = function () {
+        if(xmlhttp.readyState==4 && xmlhttp.status===200){ //服务器是否ok
+            if(xmlhttp.status==1){ //用户名冲突
+                p.removeClass("sp_hide");
                 return false;
             }
+            else { //用户名OK
+                p.addClass("sp_hide");
+                return true;
+            }
+        }
+        else{
+            return false;
         }
     }
 }
 
 function checkform_register(){
-    if(!name_check() || !passw_check() || !checkcode_check() || !email_check() || !conf_passw_check() || !checkUsername())
+    if(!name_check() || !passw_check() || !checkcode_check() || !email_check() || !conf_passw_check() || !checkUserConflict()) //
             {
                 $("#submit_btn").attr("disabled","disabled"); 
                 $("#submit_btn").addClass("btn-danger");

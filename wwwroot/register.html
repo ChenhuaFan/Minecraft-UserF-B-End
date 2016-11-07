@@ -29,7 +29,7 @@
                     <p class="color-25a69d" style="padding-bottom:30px">即刻加入 MagicWorld 家庭</p>
                     <form method="post" action="CheckFormResg.php" enctype="multipart/form-data">
                         <!--<img src="imgs/register/handler.svg" width="40%" style="position: absolute; z-index:-1; right:-3%; max-width:400px;">-->
-                        <input name="username" type="text" value="" placeholder="用户名" id="username" class="form-control" onkeyup="name_check()" onblur="checkUsername(this.value)">
+                        <input name="username" type="text" value="" placeholder="用户名" id="username" class="form-control" onkeyup="name_check()" onblur="checkUserConflict()">
                         <p class="suggest-form sp_hide" id="conflict_name">用户名已经存在！</p>
                         <p class="suggest-form" id="user_advice"><span class="glyphicon glyphicon-exclamation-sign"></span> 用户名只能为<strong>字母数字下划线</strong>组合</p>
                         <input name="password" type="password" value="" placeholder="密码" id="password" class="form-control" onkeyup="passw_check()"><br>

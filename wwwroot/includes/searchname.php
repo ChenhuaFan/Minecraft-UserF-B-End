@@ -8,7 +8,7 @@
 include ('config.php');
 
 function searchname() {
-    $username = $_GET['username'];
+    $username = $_POST['username'];
     header("Content-type: text/html; charset=utf8");
     $start = mysql_connect(DB_ADDRESS, DB_USER, DB_PASSWORD);
     if (!$start){
@@ -28,3 +28,5 @@ function searchname() {
         }
     }
 }
+
+searchname();

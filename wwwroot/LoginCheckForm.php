@@ -7,5 +7,5 @@
  * Time: 10:53
  */
 include ("includes/CheckFormL.php");
-$checkform = new CheckFormL($_POST['username'],$_POST['password']);
+$checkform = new CheckFormL($_POST['username'],$_POST['password'],$_POST['checkcode']);
 $checkform->checkunity();

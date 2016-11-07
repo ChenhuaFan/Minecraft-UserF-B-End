@@ -18,6 +18,12 @@
     }
 }
 
+.has-warning {
+    color: #d3df14;
+    border-color: #d3df14;
+    box-shadow: none;
+}
+
 .has-error {
     color: #e74c3c;
     border-color: #e74c3c;

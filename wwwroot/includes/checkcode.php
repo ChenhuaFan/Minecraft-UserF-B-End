@@ -1,6 +1,9 @@
 <?php
 include ("config.php");
+
 class checkcode {
+    private $sess_name="verify";
+
 	private function buildRandomString($length){
         header("Content-Type:text/html; charset=utf8");
 	    $chars=join("",array_merge(range("a","z"),range(0,9))); //,range("A","Z")
@@ -17,8 +20,7 @@ class checkcode {
 		$white=imagecolorallocate($image, 255, 255, 255);
 		imagefilledrectangle($image, 1, 1, $width-2, $height-2, $white);
 		$chars=$this->buildRandomString($length=4);
-		$sess_name="verify";
-		$_SESSION[$sess_name]=$chars;
+		$_SESSION[$this->sess_name]=$chars;
 		$fontfiles=array("AGENCYB.TTF","AGENCYR.TTF");
 		for($i=0;$i<$length;$i++){
 		    $size=mt_rand(18, 18);
@@ -36,7 +38,12 @@ class checkcode {
 	}
 
 	public function verifyCheckcode($formCode) {
-
+        if($formCode == $_SESSION[$this->sess_name]){
+            return true;
+        }
+        else {
+            return false;
+        }
 	}
 }
 

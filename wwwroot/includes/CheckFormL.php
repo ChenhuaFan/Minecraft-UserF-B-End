@@ -7,11 +7,13 @@
  * Time: 20:31
  */
 include ("config.php");
+include ("checkcode.php");
 
 class CheckFormL
 {
     protected $name;
     protected $password;
+    protected $checkcode;
 
     protected function test_input($data) {
         $data = trim($data);
@@ -20,11 +22,14 @@ class CheckFormL
         return $data;
     }
 
-    function __construct($name,$password){        //构造方法用于传入所需要的信息。
+    function __construct($name,$password,$checkcode){        //构造方法用于传入所需要的信息。
         $name = htmlspecialchars($this->test_input($name));
         $password = htmlspecialchars($this->test_input($password));
+        $checkcode = htmlspecialchars($this->test_input($checkcode));
         $this->name = $name;
         $this->password = $password;
+        $this->checkcode = $checkcode;
+        $_SESSION["username"] = $this->name;
     }
 
     protected function checkName(){                                           //用于检查用户名
@@ -44,12 +49,17 @@ class CheckFormL
         }
     }
 
+    protected function checkCheckcode() {
+        $Checkcode = new checkcode();
+        return $Checkcode->verifyCheckcode($this->checkcode);
+    }
+
     private function searchSql() {
         header("Content-type: text/html; charset=utf8");
         $start = mysql_connect(DB_ADDRESS, DB_USER, DB_PASSWORD);
         if (!$start){
             echo "<script>alert(\"服务器链接出错\");history.go(-1);</script>"; //
-            return false;
+            return false;    //todo: 改为false
         }
         else {
             mysql_select_db(DB_NAME,$start);
@@ -62,20 +72,19 @@ class CheckFormL
             }
             else {
                 echo"<script>alert('wrong password or username!');</script>";
-                return false;
+                return false; //todo: 改为false
             }
         }
     }
 
     public function checkunity() {
-        if(!($this->checkName()) || !($this->checkPassword())){        //
+        if(!($this->checkName()) || !($this->checkPassword()) || !($this->checkCheckcode())){        //
             echo"<script>alert('form_error!');history.go(-1);</script>";                                          //   返回其调用页面  
         }
         else{
             if($this->searchSql()){
-                echo "<script>alert('login success!')</script>";
+                echo "<script>alert('login success!'); location.href='../test_hello.php'</script>";
                 //header("Location:http://www.hsxyhgh.com/inlcudes/register_login.php");
-                return true;    //TODO：cookies或者是session 持续登陆？
             }
             else {
                 return false;
@@ -128,7 +137,7 @@ class CheckFormR extends CheckFormL
     }
 
     public function checkunity() {
-        if(!($this->checkName()) || !($this->checkPassword()) ){        //  ||!($this->checkEmail())
+        if(!($this->checkName()) || !($this->checkPassword())  || !($this->checkCheckcode())){        //  ||!($this->checkEmail())
             echo"<script>alert(\"reg_checkunity error\");history.go(-1);</script>";                     //   返回其调用页面  
         }
         else{
