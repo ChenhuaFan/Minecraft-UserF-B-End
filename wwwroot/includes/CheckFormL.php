@@ -84,7 +84,6 @@ class CheckFormL
         else{
             if($this->searchSql()){
                 echo "<script>alert('login success!'); location.href='../test_hello.php'</script>";
-                //header("Location:http://www.hsxyhgh.com/inlcudes/register_login.php");
             }
             else {
                 return false;
@@ -142,7 +141,7 @@ class CheckFormR extends CheckFormL
         }
         else{
             if ($this->writeSql()) {
-                header("Location:http://www.hsxyhgh.com/inlcudes/register_login.php");
+                echo "<script>location.href='../includes/register_login.php'</script>";
             }
             else {
                 echo"<script>history.go(-1);</script>";
